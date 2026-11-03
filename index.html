@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakamega Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#home" class="logo">Kakamega<span>Shop</span></a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#cart" class="cart-link">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </a>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO KAKAMEGA SHOPPING</p>
+            <h1>Everything You Need, All in One Place.</h1>
+            <p>
+                Shop electronics, fashion and everyday products
+                at affordable prices. Enjoy convenient online shopping.
+            </p>
+            <a href="#products" class="primary-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Shop By Category</h2>
+        <div class="category-list">
+            <a href="#electronics">📱 Electronics</a>
+            <a href="#clothing">👕 Clothing</a>
+            <a href="#footwear">👟 Footwear</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>Our Products</h2>
+        <p class="section-description">
+            Discover quality products at affordable prices.
+        </p>
+
+        <div class="product-grid">
+
+            <div class="product-card" id="electronics">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
+                     alt="Smartwatch">
+                <div class="product-info">
+                    <span class="category-label">Electronics</span>
+                    <h3>Smartwatch</h3>
+                    <p>Modern smartwatch for everyday use.</p>
+                    <strong>KSh 2,500</strong>
+                    <button onclick="addToCart(1)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+                     alt="Smartphone">
+                <div class="product-info">
+                    <span class="category-label">Electronics</span>
+                    <h3>Smartphone</h3>
+                    <p>Reliable smartphone for communication.</p>
+                    <strong>KSh 15,000</strong>
+                    <button onclick="addToCart(2)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" id="clothing">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600"
+                     alt="Fashion T-shirt">
+                <div class="product-info">
+                    <span class="category-label">Clothing</span>
+                    <h3>Fashion T-Shirt</h3>
+                    <p>Comfortable and stylish everyday wear.</p>
+                    <strong>KSh 800</strong>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" id="footwear">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
+                     alt="Sports shoes">
+                <div class="product-info">
+                    <span class="category-label">Footwear</span>
+                    <h3>Sports Shoes</h3>
+                    <p>Comfortable shoes for everyday activities.</p>
+                    <strong>KSh 2,500</strong>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600"
+                     alt="Digital camera">
+                <div class="product-info">
+                    <span class="category-label">Electronics</span>
+                    <h3>Digital Camera</h3>
+                    <p>Capture memorable moments with quality images.</p>
+                    <strong>KSh 8,000</strong>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600"
+                     alt="Handbag">
+                <div class="product-info">
+                    <span class="category-label">Fashion</span>
+                    <h3>Fashion Handbag</h3>
+                    <p>Stylish handbag for everyday occasions.</p>
+                    <strong>KSh 1,800</strong>
+                    <button onclick="addToCart(6)">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cart" class="cart-section">
+        <h2>Your Shopping Cart</h2>
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+        <div class="cart-summary">
+            <h3>Total: KSh <span id="cart-total">0</span></h3>
+            <button onclick="checkout()" class="checkout-btn">
+                Proceed to Checkout
+            </button>
+            <button onclick="clearCart()" class="clear-btn">
+                Clear Cart
+            </button>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Kakamega Shopping</h2>
+        <p>
+            Kakamega Online Shopping is an e-commerce platform
+            designed to make shopping convenient and accessible.
+            Customers can explore different products, compare prices
+            and add their preferred items to a shopping cart.
+        </p>
+        <h3>Our Mission</h3>
+        <p>
+            To provide convenient, affordable and accessible online
+            shopping while saving customers time and effort.
+        </p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have a question? Send us a message.</p>
+
+        <form id="contact-form">
+            <input type="text" id="customer-name"
+                   placeholder="Your Name" required>
+
+            <input type="email" id="customer-email"
+                   placeholder="Your Email" required>
+
+            <textarea id="customer-message"
+                      placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="form-message"></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Kakamega Online Shopping. All Rights Reserved.</p>
+    <p>Making Online Shopping Easier.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
